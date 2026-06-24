@@ -1,0 +1,33 @@
+{% extends "Admin.html" %}
+{% load static %}
+
+{% block page_title %}Delete Genre{% endblock %}
+{% block page_subtitle %}Are you sure you want to delete "{{ genre.name }}"?{% endblock %}
+
+{% block stats_cards %}{% endblock %}
+{% block books_table %}{% endblock %}
+{% block most_read_section %}{% endblock %}
+
+{% block admin_content %}
+<div class="page-header">
+    <h1>Delete Genre</h1>
+    <p>Are you sure you want to delete <strong>"{{ genre.name }}"</strong>?</p>
+</div>
+
+<div style="max-width: 480px;">
+    <div style="background: #fff; border-radius: var(--radius); border: 1px solid var(--cream-mid); padding: 32px 36px;">
+        <p style="margin-bottom: 16px; color: var(--brown-light);">
+            This action cannot be undone. Books assigned to this genre will have their genre set to empty.
+        </p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="btn-row">
+                <button type="submit" class="btn-sm btn-primary" style="padding: 10px 24px; border: none; background: var(--red);">
+                    Yes, Delete
+                </button>
+                <a href="{% url 'admin_genre_list' %}" class="btn-sm btn-outline" style="padding: 10px 24px;">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

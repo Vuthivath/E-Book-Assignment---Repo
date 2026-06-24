@@ -1,0 +1,17 @@
+# Django
+backend/db.sqlite3
+backend/media/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Frontend (already handled but just in case)
+frontend/node_modules/
+frontend/dist/
+
+# Python
+*.egg-info/
+.venv/
+venv/

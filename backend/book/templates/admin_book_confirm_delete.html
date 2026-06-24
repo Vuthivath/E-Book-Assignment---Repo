@@ -1,0 +1,33 @@
+{% extends "Admin.html" %}
+{% load static %}
+
+{% block page_title %}Delete Book{% endblock %}
+{% block page_subtitle %}Are you sure you want to delete "{{ book.title }}"?{% endblock %}
+
+{% block stats_cards %}{% endblock %}
+{% block books_table %}{% endblock %}
+{% block most_read_section %}{% endblock %}
+
+{% block admin_content %}
+<div class="page-header">
+    <h1>Delete Book</h1>
+    <p>Are you sure you want to delete <strong>"{{ book.title }}"</strong> by {{ book.author }}?</p>
+</div>
+
+<div class="form-card">
+    <p style="margin-bottom: 20px; color: var(--red); font-size: .9rem;">
+        This action cannot be undone. The book will be permanently removed from the catalog.
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="btn-row">
+            <button type="submit" class="btn-sm btn-primary"
+                style="padding: 10px 24px; border: none; background: var(--red);">
+                Yes, Delete
+            </button>
+            <a href="{% url 'admin_dashboard' %}" class="btn-sm btn-outline" style="padding: 10px 24px;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

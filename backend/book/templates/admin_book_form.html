@@ -1,0 +1,48 @@
+{% extends "Admin.html" %}
+{% load static %}
+
+{% block page_title %}{% if form.instance.pk %}Edit Book{% else %}Add Book{% endif %}{% endblock %}
+{% block page_subtitle %}{% if form.instance.pk %}Update "{{ form.instance.title }}"{% else %}Add a new book to the catalog{% endif %}{% endblock %}
+
+{% block stats_cards %}{% endblock %}
+
+{% block books_table %}{% endblock %}
+
+{% block most_read_section %}{% endblock %}
+
+{% block admin_content %}
+<div class="page-header">
+    <h1>{% if form.instance.pk %}Edit Book{% else %}Add Book{% endif %}</h1>
+    <p>{% if form.instance.pk %}Update "{{ form.instance.title }}"{% else %}Add a new book to the catalog{% endif %}</p>
+</div>
+
+<div class="form-card">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div style="color: var(--red); font-size: .85rem; margin-bottom: 16px;">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+        {% for field in form %}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+        <div style="color: var(--red); font-size: .78rem; margin-top: 2px;">{{ field.errors|striptags }}</div>
+        {% endif %}
+        {% if field.help_text %}
+        <div style="font-size: .72rem; color: var(--brown-light); margin-top: 2px;">{{ field.help_text }}</div>
+        {% endif %}
+        {% endfor %}
+
+        <div class="btn-row">
+            <button type="submit" class="btn-sm btn-primary" style="padding: 10px 24px; border: none;">
+                {% if form.instance.pk %}Update Book{% else %}Add Book{% endif %}
+            </button>
+            <a href="{% url 'admin_dashboard' %}" class="btn-sm btn-outline" style="padding: 10px 24px;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

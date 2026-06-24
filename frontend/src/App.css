@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/*hover effect navbar*/
+.nav-link {
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: #f0a500 !important;
+    transform: scale(1.2);
+}
+
+.btn-warning:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.btn-discover {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-discover:hover {
+    background-color: #5c4638 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 51, 39, 0.35);
+}
+
+.btn-browse {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-browse:hover {
+    background-color: #2d2219 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 34, 25, 0.25);
+}
+
+.btn-addcart {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-addcart:hover {
+    background-color: #5c4638 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 30, 18, 0.35);
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
