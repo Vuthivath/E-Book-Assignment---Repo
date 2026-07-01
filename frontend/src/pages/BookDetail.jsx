@@ -315,7 +315,7 @@ function BookDetail() {
                                     onMouseLeave={handleBtnLeave}
                                     onClick={toggleBookmark}>
                                     <FaHeart className="me-1" size={14} />
-                                    {bookmarked ? 'Bookmarked' : 'Bookmark'}
+                                    {bookmarked ? 'Wishlisted' : 'Wishlist'}
                                 </button>
                                 {bookmarkMsg && (
                                     <span
