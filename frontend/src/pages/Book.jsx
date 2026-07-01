@@ -524,7 +524,7 @@ function Books() {
 
     const handleBookmark = (bookId) => {
         if (!token || !user) {
-            showMessage('Log in to bookmark');
+            showMessage('Log in to Wishlist');
             return;
         }
 
@@ -544,7 +544,7 @@ function Books() {
                         const next = new Set(bookmarkedIds);
                         next.delete(bookId);
                         setBookmarkedIds(next);
-                        showMessage('Bookmark removed');
+                        showMessage('Wishlist removed');
                     }
                 })
                 .catch(() => {});
@@ -562,7 +562,7 @@ function Books() {
                         const next = new Set(bookmarkedIds);
                         next.add(bookId);
                         setBookmarkedIds(next);
-                        showMessage('Bookmarked!');
+                        showMessage('Wishlisted!');
                     }
                 })
                 .catch(() => {});
@@ -670,7 +670,7 @@ function Books() {
                                                                 justifyContent: 'center',
                                                             }}
                                                             onClick={() => handleBookmark(book.id)}
-                                                            title={isBm ? 'Remove bookmark' : 'Add bookmark'}>
+                                                            title={isBm ? 'Remove Wishlist' : 'Add Wishlist'}>
                                                             <FaHeart size={12} />
                                                         </button>
                                                     )}
