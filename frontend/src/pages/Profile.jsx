@@ -201,7 +201,7 @@ export default function Profile() {
                 )}
 
                 {/* BOOKMARKS */}
-                {activeTab === 'Bookmarks' && (
+                {activeTab === 'Wishlist' && (
                     <div>
                         {bookmarks.length === 0 ? (
                             <Empty message="Nothing saved yet." cta="Browse books" onClick={() => navigate('/books')} />

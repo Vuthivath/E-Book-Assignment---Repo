@@ -98,9 +98,9 @@ function Home() {
                         const next = new Set(bookmarkedIds);
                         next.delete(bookId);
                         setBookmarkedIds(next);
-                        showBookmarkMsg('Bookmark removed');
+                        showBookmarkMsg('Wishlist removed');
                     } else {
-                        showBookmarkMsg('Failed to remove bookmark');
+                        showBookmarkMsg('Failed to remove Wishlist');
                     }
                 })
                 .catch(() => showBookmarkMsg('Connection error'));
@@ -323,7 +323,7 @@ function Home() {
                                                 cursor: 'pointer',
                                                 transition: 'all 0.2s ease',
                                             }}
-                                            title={isBm ? 'Remove bookmark' : 'Add bookmark'}>
+                                            title={isBm ? 'Remove Wishlist' : 'Add Wishlist'}>
                                             <FaHeart size={14} />
                                         </button>
                                     )}
