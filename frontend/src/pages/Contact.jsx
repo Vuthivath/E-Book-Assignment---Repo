@@ -84,23 +84,15 @@ const Contact = () => {
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <button
-                                        onClick={() =>
-                                            window.open(
-                                                'https://www.google.com/maps/place/Western+University+Main+Campus/@11.5715553,104.8866677,16z/data=!3m1!4b1!4m6!3m5!1s0x3109519e617fd2ad:0xf2d7ba03bf4d9285!8m2!3d11.5715553!4d104.8892426!16s%2Fg%2F11csq6n_zw?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D',
-                                                '_blank',
-                                            )
-                                        }>
-                                        <p className="mb-0" style={{fontSize: '12px', color: '#888'}}>
-                                            {item.label}
-                                        </p>
-                                        <p className="mb-0 fw-bold" style={{fontSize: '14px', color: '#2C1F0F'}}>
-                                            {item.bold}
-                                        </p>
-                                        <p className="mb-0" style={{fontSize: '12px', color: '#888'}}>
-                                            {item.sub}
-                                        </p>
-                                    </button>
+                                    <p className="mb-0" style={{fontSize: '12px', color: '#888'}}>
+                                        {item.label}
+                                    </p>
+                                    <p className="mb-0 fw-bold" style={{fontSize: '14px', color: '#2C1F0F'}}>
+                                        {item.bold}
+                                    </p>
+                                    <p className="mb-0" style={{fontSize: '12px', color: '#888'}}>
+                                        {item.sub}
+                                    </p>
                                 </div>
                             </div>
                         ))}
