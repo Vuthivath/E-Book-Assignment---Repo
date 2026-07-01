@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {FaBookmark, FaShoppingCart, FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+import {FaHeart, FaShoppingCart, FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 import {addToCart, useCart} from '../cartUtils';
 import {API_BASE_API, resolveImage} from '../config';
 
@@ -671,7 +671,7 @@ function Books() {
                                                             }}
                                                             onClick={() => handleBookmark(book.id)}
                                                             title={isBm ? 'Remove bookmark' : 'Add bookmark'}>
-                                                            <FaBookmark size={12} />
+                                                            <FaHeart size={12} />
                                                         </button>
                                                     )}
                                                 </div>
