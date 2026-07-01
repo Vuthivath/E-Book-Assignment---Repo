@@ -73,12 +73,12 @@ function Home() {
 
     const handleBookmark = (bookId) => {
         if (!token || !userObj) {
-            showBookmarkMsg('Log in to bookmark');
+            showBookmarkMsg('Log in to Wishlist');
             return;
         }
 
         if (!bookId) {
-            showBookmarkMsg('Cannot bookmark this item');
+            showBookmarkMsg('Cannot wishlist this item');
             return;
         }
 
@@ -118,9 +118,9 @@ function Home() {
                         const next = new Set(bookmarkedIds);
                         next.add(bookId);
                         setBookmarkedIds(next);
-                        showBookmarkMsg('Bookmarked!');
+                        showBookmarkMsg('Wishlisted!');
                     } else {
-                        showBookmarkMsg('Failed to bookmark');
+                        showBookmarkMsg('Failed to wishlist');
                     }
                 })
                 .catch(() => showBookmarkMsg('Connection error'));

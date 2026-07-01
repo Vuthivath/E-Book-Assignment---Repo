@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {FaBookOpen} from 'react-icons/fa';
 
-const TABS = ['Library', 'Bookmarks', 'Edit Profile'];
+const TABS = ['Library', 'Wishlists', 'Edit Profile'];
 
 export default function Profile() {
     const navigate = useNavigate();
