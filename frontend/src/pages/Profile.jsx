@@ -152,7 +152,7 @@ export default function Profile() {
                         onClick={() => setActiveTab(tab)}>
                         {tab}
                         {tab === 'Library' && library.length > 0 && <span style={s.tabCount}>{library.length}</span>}
-                        {tab === 'Bookmarks' && bookmarks.length > 0 && (
+                        {tab === 'Wishlists' && bookmarks.length > 0 && (
                             <span style={s.tabCount}>{bookmarks.length}</span>
                         )}
                     </button>
