@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
-import {FaShoppingCart, FaBookmark} from 'react-icons/fa';
+import {FaShoppingCart, FaHeart} from 'react-icons/fa';
 import {addToCart, useCart} from '../cartUtils';
 
 function BookDetail() {
@@ -68,13 +68,13 @@ function BookDetail() {
 
     const toggleBookmark = () => {
         if (!user || !token) {
-            setBookmarkMsg('Log in to bookmark');
+            setBookmarkMsg('Log in to Wishlist');
             setTimeout(() => setBookmarkMsg(''), 2000);
             return;
         }
 
         if (!id) {
-            setBookmarkMsg('Cannot bookmark this item');
+            setBookmarkMsg('Cannot Wishlist this item');
             setTimeout(() => setBookmarkMsg(''), 2000);
             return;
         }
@@ -91,7 +91,7 @@ function BookDetail() {
                 .then((res) => {
                     if (res.ok) {
                         setBookmarked(false);
-                        setBookmarkMsg('Bookmark removed');
+                        setBookmarkMsg('Wishlist removed');
                         setTimeout(() => setBookmarkMsg(''), 1500);
                     }
                 })
@@ -108,7 +108,7 @@ function BookDetail() {
                 .then((res) => {
                     if (res.ok) {
                         setBookmarked(true);
-                        setBookmarkMsg('Bookmarked!');
+                        setBookmarkMsg('Wishlist!');
                         setTimeout(() => setBookmarkMsg(''), 1500);
                     }
                 })
@@ -314,7 +314,7 @@ function BookDetail() {
                                     onMouseEnter={handleBtnEnter}
                                     onMouseLeave={handleBtnLeave}
                                     onClick={toggleBookmark}>
-                                    <FaBookmark className="me-1" size={14} />
+                                    <FaHeart className="me-1" size={14} />
                                     {bookmarked ? 'Bookmarked' : 'Bookmark'}
                                 </button>
                                 {bookmarkMsg && (

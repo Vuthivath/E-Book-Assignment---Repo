@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-import {FaShoppingCart, FaBookmark} from 'react-icons/fa';
+import {FaShoppingCart, FaHeart} from 'react-icons/fa';
 import {useCart} from '../cartUtils';
 import {API_BASE_API, API_BASE} from '../config';
 
@@ -324,7 +324,7 @@ function Home() {
                                                 transition: 'all 0.2s ease',
                                             }}
                                             title={isBm ? 'Remove bookmark' : 'Add bookmark'}>
-                                            <FaBookmark size={14} />
+                                            <FaHeart size={14} />
                                         </button>
                                     )}
                                 </div>
